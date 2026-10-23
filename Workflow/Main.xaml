@@ -1,0 +1,392 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:sd="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable6"
+ xmlns:sd1="clr-namespace:System.Data;assembly=System.Data.Common"
+ xmlns:sd2="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable5"
+ xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities"
+ xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities"
+ xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities"
+ xmlns:ugam="clr-namespace:UiPath.GSuite.Activities.Models;assembly=UiPath.GSuite.Activities"
+ xmlns:ugsm="clr-namespace:UiPath.GSuite.Sheets.Models;assembly=UiPath.GSuite"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform"
+ xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.GSuite.Activities.Models</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets.Enums</x:String>
+      <x:String>UiPath.GSuite.Sheets.Enums</x:String>
+      <x:String>UiPath.GSuite.Sheets.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>Studio.Generated.TypedDataTable6</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable5</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable4</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable3</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable2</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable1</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.ReaderWriter</AssemblyReference>
+      <AssemblyReference>System.Xml.XmlSerializer</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Globalization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd2:DataTable5" Default="[new System.Data.DataTable5 With {.TableName = &quot;TableName&quot;}]" Name="readRange_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ReadRangeConnections`1_2</x:String>
+            <x:String x:Key="SourcePropertyName">Result</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable6" Default="[new System.Data.DataTable6 With {.TableName = &quot;TableName&quot;}]" Name="readRange" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
+    <uga:ReadRangeConnections x:TypeArguments="sd:DataTable6" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" RangeInformation="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="PlacementFlow_Data" BrowserItemId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" ConnectionId="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" DisplayName="Read Range" HasHeaders="True" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_1" ItemSelectionMode="Browse" Range="Students" ReadAs="Values" Result="[readRange]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False">
+      <uga:ReadRangeConnections.ColumnNames>
+        <x:Array Type="x:String">
+          <x:String>PRN</x:String>
+          <x:String>Name</x:String>
+          <x:String>Email</x:String>
+          <x:String>Branch</x:String>
+          <x:String>CGPA</x:String>
+          <x:String>Backlogs</x:String>
+          <x:String>GraduationYear</x:String>
+          <x:String>InvitationStatus</x:String>
+          <x:String>InvitationTime</x:String>
+          <x:String>SimulateEmailFailure</x:String>
+        </x:Array>
+      </uga:ReadRangeConnections.ColumnNames>
+      <uga:ReadRangeConnections.FileIdBackup>
+        <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="Browse">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:ReadRangeConnections.FileIdBackup>
+      <uga:ReadRangeConnections.Item>
+        <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID0}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" ConnectionKey="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" FriendlyName="PlacementFlow_Data" FullPathHint="My Drive/PlacementFlow_Data" InputMode="Browse">
+          <ugam:DriveItemArgument.DriveId>
+            <InArgument x:TypeArguments="x:String" />
+          </ugam:DriveItemArgument.DriveId>
+          <ugam:DriveItemArgument.ParentIdFullPathHint>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ugam:DriveItemArgument.ParentIdFullPathHint>
+        </ugam:DriveItemArgument>
+      </uga:ReadRangeConnections.Item>
+      <uga:ReadRangeConnections.RangeMetadata>
+        <ugsm:RangeMetadataSlim ColumnStart="1" RangeType="Range" />
+      </uga:ReadRangeConnections.RangeMetadata>
+    </uga:ReadRangeConnections>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[readRange]" DisplayName="For Each Row in Data Table" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd1:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Processing student: &quot; &amp; CurrentRow(&quot;Name&quot;).ToString()]" />
+            <If Condition="[Not IsNumeric(CurrentRow(&quot;CGPA&quot;).ToString()) OrElse&#xA;Not IsNumeric(CurrentRow(&quot;Backlogs&quot;).ToString()) OrElse&#xA;Not IsNumeric(CurrentRow(&quot;GraduationYear&quot;).ToString())]" DisplayName="If" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <ui:LogMessage DisplayName="Log Message 1" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;REVIEW: Missing CGPA for student &quot; &amp; CurrentRow(&quot;Name&quot;).ToString()]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <If Condition="[CDbl(CurrentRow(&quot;CGPA&quot;).ToString()) &gt;= 7 AndAlso&#xA;CInt(CurrentRow(&quot;Backlogs&quot;).ToString()) = 0 AndAlso&#xA;CInt(CurrentRow(&quot;GraduationYear&quot;).ToString()) = 2027 AndAlso&#xA;New String() {&quot;CSE&quot;, &quot;IT&quot;, &quot;AIML&quot;}.Contains(CurrentRow(&quot;Branch&quot;).ToString().Trim().ToUpper()) AndAlso&#xA;(Not New String() {&quot;DRAFTED&quot;, &quot;SENT&quot;}.Contains(CurrentRow(&quot;InvitationStatus&quot;).ToString().Trim().ToUpper()) OrElse CurrentRow(&quot;SimulateEmailFailure&quot;).ToString().Trim().ToUpper() = &quot;TRUE&quot;)]" DisplayName="If 1" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <ui:LogMessage DisplayName="Log Message 2" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;ELIGIBLE: &quot; &amp; CurrentRow(&quot;Name&quot;).ToString()]" />
+                        <TryCatch DisplayName="Try Catch" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch.Try>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <If Condition="[CurrentRow(&quot;SimulateEmailFailure&quot;).ToString().Trim().ToUpper() = &quot;TRUE&quot;]" DisplayName="If 2" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If.Then>
+                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                    <Throw DisplayName="Throw" Exception="[New System.Exception(&quot;DEMO ONLY: Simulated Gmail outage before email creation for &quot; &amp; CurrentRow(&quot;Name&quot;).ToString())]" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15" />
+                                </If.Else>
+                              </If>
+                              <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="&lt;p&gt;Hello,&lt;/p&gt;&lt;p&gt;You meet the eligibility criteria for the PlacementFlow test placement drive.&lt;/p&gt;&lt;p&gt;DriveID: PF-2027-001&lt;/p&gt;&lt;p&gt;Criteria: CGPA at least 7, zero active backlogs, graduation year 2027, and branch CSE, IT or AIML.&lt;/p&gt;&lt;p&gt;Register here: &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfF-8phF7TiMOUwSUHkNRSyLhMXrGJP79cMk571qY2NJpq78w/viewform?usp=publish-editor&quot;&gt;https://docs.google.com/forms/d/e/1FAIpQLSfF-8phF7TiMOUwSUHkNRSyLhMXrGJP79cMk571qY2NJpq78w/viewform?usp=publish-editor&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Enter your PRN and the email address used for this invitation. Use DriveID PF-2027-001. UiPath will validate registrations and flag duplicates.&lt;/p&gt;&lt;p&gt;This is an academic automation demonstration, not an actual recruitment offer.&lt;/p&gt;" ConnectionId="041ff4a3-9bb4-4c62-8d65-4c8a556f4be0" DisplayName="Send Email" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="PlacementFlow | Placement Drive Invitation" To="[New String() {CurrentRow(&quot;Email&quot;).ToString().Trim()}]" UseConnectionService="True">
+                                <uga:SendEmailConnections.Attachments>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                                </uga:SendEmailConnections.Attachments>
+                                <uga:SendEmailConnections.AttachmentsBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.AttachmentsBackup>
+                                <uga:SendEmailConnections.InputTypeBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.InputTypeBackup>
+                              </uga:SendEmailConnections>
+                              <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="PlacementFlow_Data" BrowserItemId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" Cell="[&quot;H&quot; &amp; (CurrentRow.Table.Rows.IndexOf(CurrentRow) + 2).ToString()]" ConnectionId="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" DisplayName="Write Cell" HideCell="False" sap2010:WorkflowViewState.IdRef="WriteCellConnections_1" ItemSelectionMode="Browse" RangeLocation="Students" UseConnectionService="True" WhatToWrite="[&quot;DRAFTED&quot;]">
+                                <uga:WriteCellConnections.FileIdBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="Browse">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:WriteCellConnections.FileIdBackup>
+                                <uga:WriteCellConnections.Item>
+                                  <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID1}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" FriendlyName="PlacementFlow_Data" FullPathHint="My Drive/PlacementFlow_Data" InputMode="Browse">
+                                    <ugam:DriveItemArgument.DriveId>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </ugam:DriveItemArgument.DriveId>
+                                    <ugam:DriveItemArgument.ParentIdFullPathHint>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </ugam:DriveItemArgument.ParentIdFullPathHint>
+                                  </ugam:DriveItemArgument>
+                                </uga:WriteCellConnections.Item>
+                              </uga:WriteCellConnections>
+                              <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="PlacementFlow_Data" BrowserItemId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" Cell="[&quot;I&quot; &amp; (CurrentRow.Table.Rows.IndexOf(CurrentRow) + 2).ToString()]" ConnectionId="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" DisplayName="Write Cell 1" HideCell="False" sap2010:WorkflowViewState.IdRef="WriteCellConnections_2" ItemSelectionMode="Browse" RangeLocation="Students" UseConnectionService="True" WhatToWrite="[DateTime.UtcNow.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) &amp; &quot; UTC&quot;]">
+                                <uga:WriteCellConnections.FileIdBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID2" StoredValue="Browse">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:WriteCellConnections.FileIdBackup>
+                                <uga:WriteCellConnections.Item>
+                                  <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID2}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" FriendlyName="PlacementFlow_Data" FullPathHint="My Drive/PlacementFlow_Data" InputMode="Browse">
+                                    <ugam:DriveItemArgument.DriveId>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </ugam:DriveItemArgument.DriveId>
+                                    <ugam:DriveItemArgument.ParentIdFullPathHint>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </ugam:DriveItemArgument.ParentIdFullPathHint>
+                                  </ugam:DriveItemArgument>
+                                </uga:WriteCellConnections.Item>
+                              </uga:WriteCellConnections>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                  <ui:LogMessage DisplayName="Log Message 4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;INVITATION WORKFLOW ERROR: &quot; &amp; If(CurrentRow(&quot;SimulateEmailFailure&quot;).ToString().Trim().ToUpper() = &quot;TRUE&quot;, &quot;DEMO ONLY - simulated Gmail outage before draft creation. &quot;, &quot;Check Gmail and tracking writes before retrying. &quot;) &amp; &quot;Student: &quot; &amp; CurrentRow(&quot;Name&quot;).ToString()]" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8" />
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <ui:LogMessage DisplayName="Log Message 3" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[If(New String() {&quot;DRAFTED&quot;, &quot;SENT&quot;}.Contains(CurrentRow(&quot;InvitationStatus&quot;).ToString().Trim().ToUpper()),&#xA;&quot;SKIPPED: Invitation already processed for &quot;,&#xA;&quot;NOT ELIGIBLE: &quot;) &amp; CurrentRow(&quot;Name&quot;).ToString()]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <uga:ReadRangeConnections x:TypeArguments="sd2:DataTable5" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" RangeInformation="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="PlacementFlow_Data" BrowserItemId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" ConnectionId="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" DisplayName="Read Range 1" HasHeaders="True" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_2" ItemSelectionMode="Browse" Range="'Form Responses 1'" ReadAs="Values" Result="[readRange_1]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False">
+      <uga:ReadRangeConnections.ColumnNames>
+        <x:Array Type="x:String">
+          <x:String>Timestamp</x:String>
+          <x:String>PRN</x:String>
+          <x:String>Name</x:String>
+          <x:String>Email</x:String>
+          <x:String>DriveID</x:String>
+          <x:String>RegistrationStatus</x:String>
+          <x:String>ProcessedTime</x:String>
+        </x:Array>
+      </uga:ReadRangeConnections.ColumnNames>
+      <uga:ReadRangeConnections.FileIdBackup>
+        <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID3" StoredValue="Browse">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:ReadRangeConnections.FileIdBackup>
+      <uga:ReadRangeConnections.Item>
+        <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID3}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" ConnectionKey="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" FriendlyName="PlacementFlow_Data" FullPathHint="My Drive/PlacementFlow_Data" InputMode="Browse">
+          <ugam:DriveItemArgument.DriveId>
+            <InArgument x:TypeArguments="x:String" />
+          </ugam:DriveItemArgument.DriveId>
+          <ugam:DriveItemArgument.ParentIdFullPathHint>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ugam:DriveItemArgument.ParentIdFullPathHint>
+        </ugam:DriveItemArgument>
+      </uga:ReadRangeConnections.Item>
+      <uga:ReadRangeConnections.RangeMetadata>
+        <ugsm:RangeMetadataSlim ColumnStart="1" RangeType="Range" />
+      </uga:ReadRangeConnections.RangeMetadata>
+    </uga:ReadRangeConnections>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[readRange_1]" DisplayName="For Each Row in Data Table 1" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd1:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="RegistrationRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <TryCatch DisplayName="Try Catch 1" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="PlacementFlow_Data" BrowserItemId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" Cell="[&quot;F&quot; &amp; (RegistrationRow.Table.Rows.IndexOf(RegistrationRow) + 2).ToString()]" ConnectionId="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" DisplayName="Write Cell 2" HideCell="False" sap2010:WorkflowViewState.IdRef="WriteCellConnections_3" ItemSelectionMode="Browse" RangeLocation="Form Responses 1" UseConnectionService="True" WhatToWrite="[If(String.IsNullOrWhiteSpace(RegistrationRow(&quot;PRN&quot;).ToString()) OrElse String.IsNullOrWhiteSpace(RegistrationRow(&quot;Name&quot;).ToString()) OrElse String.IsNullOrWhiteSpace(RegistrationRow(&quot;Email&quot;).ToString()), &quot;REVIEW: Missing registration details&quot;, If(RegistrationRow(&quot;DriveID&quot;).ToString().Trim().ToUpper() &lt;&gt; &quot;PF-2027-001&quot;, &quot;REJECTED: Unknown drive&quot;, If(Not readRange.AsEnumerable().Any(Function(s) s(&quot;PRN&quot;).ToString().Trim() = RegistrationRow(&quot;PRN&quot;).ToString().Trim() AndAlso s(&quot;Email&quot;).ToString().Trim().ToLower() = RegistrationRow(&quot;Email&quot;).ToString().Trim().ToLower() AndAlso New String() {&quot;DRAFTED&quot;, &quot;SENT&quot;}.Contains(s(&quot;InvitationStatus&quot;).ToString().Trim().ToUpper()) AndAlso IsNumeric(s(&quot;CGPA&quot;).ToString()) AndAlso IsNumeric(s(&quot;Backlogs&quot;).ToString()) AndAlso IsNumeric(s(&quot;GraduationYear&quot;).ToString()) AndAlso CDbl(s(&quot;CGPA&quot;).ToString()) &gt;= 7 AndAlso CDbl(s(&quot;CGPA&quot;).ToString()) &lt;= 10 AndAlso CDbl(s(&quot;Backlogs&quot;).ToString()) = 0 AndAlso CDbl(s(&quot;GraduationYear&quot;).ToString()) = 2027 AndAlso New String() {&quot;CSE&quot;, &quot;IT&quot;, &quot;AIML&quot;}.Contains(s(&quot;Branch&quot;).ToString().Trim().ToUpper())), &quot;REJECTED: Student, email or eligibility mismatch&quot;, If(RegistrationRow.Table.AsEnumerable().Take(RegistrationRow.Table.Rows.IndexOf(RegistrationRow)).Any(Function(r) r(&quot;PRN&quot;).ToString().Trim() = RegistrationRow(&quot;PRN&quot;).ToString().Trim() AndAlso r(&quot;DriveID&quot;).ToString().Trim().ToUpper() = &quot;PF-2027-001&quot; AndAlso r(&quot;Email&quot;).ToString().Trim().ToLower() = RegistrationRow(&quot;Email&quot;).ToString().Trim().ToLower() AndAlso Not String.IsNullOrWhiteSpace(r(&quot;Name&quot;).ToString())), &quot;DUPLICATE: Already registered&quot;, &quot;REGISTERED&quot;))))]">
+                    <uga:WriteCellConnections.FileIdBackup>
+                      <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </uga:WriteCellConnections.FileIdBackup>
+                    <uga:WriteCellConnections.Item>
+                      <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID4}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" FriendlyName="PlacementFlow_Data" FullPathHint="My Drive/PlacementFlow_Data" InputMode="Browse">
+                        <ugam:DriveItemArgument.DriveId>
+                          <InArgument x:TypeArguments="x:String" />
+                        </ugam:DriveItemArgument.DriveId>
+                        <ugam:DriveItemArgument.ParentIdFullPathHint>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ugam:DriveItemArgument.ParentIdFullPathHint>
+                      </ugam:DriveItemArgument>
+                    </uga:WriteCellConnections.Item>
+                  </uga:WriteCellConnections>
+                  <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="PlacementFlow_Data" BrowserItemId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" Cell="[&quot;G&quot; &amp; (RegistrationRow.Table.Rows.IndexOf(RegistrationRow) + 2).ToString()]" ConnectionId="59a529fc-a1e0-4b10-b8a8-85b59edb3b24" DisplayName="Write Cell 3" HideCell="False" sap2010:WorkflowViewState.IdRef="WriteCellConnections_4" ItemSelectionMode="Browse" RangeLocation="Form Responses 1" UseConnectionService="True" WhatToWrite="[If(String.IsNullOrWhiteSpace(RegistrationRow(&quot;ProcessedTime&quot;).ToString()), DateTime.UtcNow.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) &amp; &quot; UTC&quot;, RegistrationRow(&quot;ProcessedTime&quot;).ToString())]">
+                    <uga:WriteCellConnections.FileIdBackup>
+                      <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID5" StoredValue="Browse">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </uga:WriteCellConnections.FileIdBackup>
+                    <uga:WriteCellConnections.Item>
+                      <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID5}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1dU6FMUQATbo7RLlUIJVKMRE2MIILEbTU6FlBtShRgy4/edit?usp=drivesdk" FriendlyName="PlacementFlow_Data" FullPathHint="My Drive/PlacementFlow_Data" InputMode="Browse">
+                        <ugam:DriveItemArgument.DriveId>
+                          <InArgument x:TypeArguments="x:String" />
+                        </ugam:DriveItemArgument.DriveId>
+                        <ugam:DriveItemArgument.ParentIdFullPathHint>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ugam:DriveItemArgument.ParentIdFullPathHint>
+                      </ugam:DriveItemArgument>
+                    </uga:WriteCellConnections.Item>
+                  </uga:WriteCellConnections>
+                  <ui:LogMessage DisplayName="Log Message 5" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Registration &quot; &amp; RegistrationRow(&quot;PRN&quot;).ToString() &amp; &quot;: &quot; &amp; If(String.IsNullOrWhiteSpace(RegistrationRow(&quot;PRN&quot;).ToString()) OrElse String.IsNullOrWhiteSpace(RegistrationRow(&quot;Name&quot;).ToString()) OrElse String.IsNullOrWhiteSpace(RegistrationRow(&quot;Email&quot;).ToString()), &quot;REVIEW: Missing registration details&quot;, If(RegistrationRow(&quot;DriveID&quot;).ToString().Trim().ToUpper() &lt;&gt; &quot;PF-2027-001&quot;, &quot;REJECTED: Unknown drive&quot;, If(Not readRange.AsEnumerable().Any(Function(s) s(&quot;PRN&quot;).ToString().Trim() = RegistrationRow(&quot;PRN&quot;).ToString().Trim() AndAlso s(&quot;Email&quot;).ToString().Trim().ToLower() = RegistrationRow(&quot;Email&quot;).ToString().Trim().ToLower() AndAlso New String() {&quot;DRAFTED&quot;, &quot;SENT&quot;}.Contains(s(&quot;InvitationStatus&quot;).ToString().Trim().ToUpper()) AndAlso IsNumeric(s(&quot;CGPA&quot;).ToString()) AndAlso IsNumeric(s(&quot;Backlogs&quot;).ToString()) AndAlso IsNumeric(s(&quot;GraduationYear&quot;).ToString()) AndAlso CDbl(s(&quot;CGPA&quot;).ToString()) &gt;= 7 AndAlso CDbl(s(&quot;CGPA&quot;).ToString()) &lt;= 10 AndAlso CDbl(s(&quot;Backlogs&quot;).ToString()) = 0 AndAlso CDbl(s(&quot;GraduationYear&quot;).ToString()) = 2027 AndAlso New String() {&quot;CSE&quot;, &quot;IT&quot;, &quot;AIML&quot;}.Contains(s(&quot;Branch&quot;).ToString().Trim().ToUpper())), &quot;REJECTED: Student, email or eligibility mismatch&quot;, If(RegistrationRow.Table.AsEnumerable().Take(RegistrationRow.Table.Rows.IndexOf(RegistrationRow)).Any(Function(r) r(&quot;PRN&quot;).ToString().Trim() = RegistrationRow(&quot;PRN&quot;).ToString().Trim() AndAlso r(&quot;DriveID&quot;).ToString().Trim().ToUpper() = &quot;PF-2027-001&quot; AndAlso r(&quot;Email&quot;).ToString().Trim().ToLower() = RegistrationRow(&quot;Email&quot;).ToString().Trim().ToLower() AndAlso Not String.IsNullOrWhiteSpace(r(&quot;Name&quot;).ToString())), &quot;DUPLICATE: Already registered&quot;, &quot;REGISTERED&quot;))))]" />
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <ui:LogMessage DisplayName="Log Message 6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;REGISTRATION PROCESSING FAILED: PRN &quot; &amp; RegistrationRow(&quot;PRN&quot;).ToString() &amp; &quot;. Check Google Sheets connection and retry; this record was not confirmed.&quot;]" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12" />
+              </TryCatch.Finally>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>
